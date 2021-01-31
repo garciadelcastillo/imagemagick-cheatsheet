@@ -13,3 +13,11 @@ Many of these operations are possible with `ffmpeg` as well, check my other [che
 Use `mogrify` for batch processes **in place** (originals will be overwritten). This example resizes to 256x256, fitting to the smallest simension (`^`). Then crops, keeping image centered:
 
     magick mogrify -resize 256x256^ -gravity center -extent 256x256^ *.png
+
+### Image pairs
+
+Creates an image stitching two next to each other (or a 2x1 `montage`). This example crops two input images to `256x256` and stitches them together (useful for example for `Pix2Pix` dataset creation):
+
+    magick montage a.png b.png -resize 256x256^ -gravity center -extent 256x256 -geometry 256x256^ -tile 2x1 -depth 8 -define png:color-type=2 ab.png
+    
+The above also forces 8-bit color depth (if you are using 16-bit imagemagick) and color image (if inputs are BW).
