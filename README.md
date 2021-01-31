@@ -12,4 +12,4 @@ Many of these operations are possible with `ffmpeg` as well, check my other [che
 
 Use `mogrify` for batch processes **in place** (originals will be overwritten). This example resizes to 256x256, fitting to the smallest simension (`^`). Then crops, keeping image centered:
 
-  magick mogrify -resize 256x256^ -gravity center -extent 256x256^ *.png
+    magick mogrify -resize 256x256^ -gravity center -extent 256x256^ *.png
