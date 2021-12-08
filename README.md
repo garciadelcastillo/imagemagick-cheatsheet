@@ -29,3 +29,16 @@ Creates an image stitching two next to each other (or a 2x1 `montage`). This exa
         ab.png
     
 The above also forces 8-bit color depth (if you are using 16-bit imagemagick) and color image (if inputs are BW).
+
+
+### Creating a mosaic/montage/collage of images
+
+Using:
+
+    magick montage *.png -geometry 224x224 -tile 27x14 montage.png
+
+Creates a 27x14 collage with the stills. Margins can be added to the `geometry` parameter, as well as background and borders:
+
+    magick montage *.png -geometry 256x128>+10+5 -tile 12x10 -background white -border 1 -bordercolor lightgray montage.png
+
+The `>` operator reduces images only bigger than `256x128`.
