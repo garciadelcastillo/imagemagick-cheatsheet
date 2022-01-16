@@ -8,6 +8,11 @@ Check [this guide](https://nono.ma/ffmpeg-and-imagemagick-guide) by [@nonoesp](h
 
 Many of these operations are possible with `ffmpeg` as well, check my other [cheatsheet](https://github.com/garciadelcastillo/ffmpeg-cheatsheet).
 
+### Batch convert
+Use `mogrify` for batch convert a bunch of images to a new format:
+
+    magick mogrify -format jpg *.heic
+
 ### Batch resize+crop
 
 Use `mogrify` for batch processes **in place** (originals will be overwritten). This example resizes to 256x256, fitting to the smallest simension (`^`). Then crops, keeping image centered:
