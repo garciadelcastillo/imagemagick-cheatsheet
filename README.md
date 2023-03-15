@@ -57,3 +57,7 @@ Invert a single image:
 Invert all images in folder (in-place):
     
     magick mogrify -channel RGB -negate *.png
+
+To avoid the image flattened to 1 channel:
+
+    magick mogrify -channel RGB -negate -depth 8 -define png:color-type=6 *.png
