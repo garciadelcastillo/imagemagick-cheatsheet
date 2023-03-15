@@ -47,3 +47,13 @@ Creates a 27x14 collage with the stills. Margins can be added to the `geometry` 
     magick montage *.png -geometry 256x128>+10+5 -tile 12x10 -background white -border 1 -bordercolor lightgray montage.png
 
 The `>` operator reduces images only bigger than `256x128`.
+
+### Invert images
+
+Invert a single image:
+
+    magick convert input.png -channel RGB -negate inverted.png
+     
+Invert all images in folder (in-place):
+    
+    magick mogrify -channel RGB -negate *.png
